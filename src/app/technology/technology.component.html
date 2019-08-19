@@ -1,0 +1,154 @@
+<div class="sticky-container">
+    <ul class="sticky">
+        <li style="background: rgb(59, 89, 152)">
+            <img src="https://img.icons8.com/plasticine/100/000000/facebook-f.png" width="32" height="32">
+            <p><a style="color: white; font-size: 15px " href="https://www.facebook.com/programacionnet" target="_blank">Facebook</a></p>
+        </li>
+        <li >
+            <img src="https://img.icons8.com/cute-clipart/64/000000/twitter.png" width="32" height="32">
+            <p><a style="color: black; font-size: 15px " href="https://twitter.com/noprog" target="_blank">Twitter</a></p>
+        </li>
+        <li >
+            <img src="https://img.icons8.com/color/50/000000/google-logo.png" width="32" height="32">
+            <p><a style="color: black; font-size: 15px " href="https://plus.google.com/programacionnet" target="_blank">Google+</a></p>
+        </li>
+        <li style="    background: rgb(0, 123, 182)">
+            <img src="https://img.icons8.com/color/48/000000/linkedin.png" width="32" height="32">
+            <p><a  style="color: white; font-size: 15px; margin-top: 20px "href="https://www.linkedin.com/company/programacionnet" target="_blank">LinkedIn</a></p>
+        </li>
+        <li style="background: #FF0000">
+            <img src="https://img.icons8.com/plasticine/100/000000/youtube.png" width="32" height="32">
+            <p><a style="color: white; font-size: 15px " href="http://www.youtube.com/programacionnet" target="_blank">YouYube</a></p>
+        </li>
+        <li style="background: #cf1020 ">
+            <img src="https://img.icons8.com/color/48/000000/pinterest--v1.png" width="32" height="32">
+            <p><a style="color: white; font-size: 15px " href="https://www.pinterest.com/programacionnet" target="_blank">Pinterest</a></p>
+        </li>
+    </ul>
+</div>
+
+
+
+<section class="top-nav">
+
+        <section class="banner-sec"  >
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <div id="carouselExampleIndicators" class="carousel slide" style="-webkit-box-shadow: 0px 2px 12px 3px rgb(0, 0, 246);
+                -moz-box-shadow: 0px 2px 12px 3px rgb(0, 0, 246);
+                box-shadow: 0px 2px 12px 3px rgb(0, 0, 246);" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                  </ol>
+                  <div class="carousel-inner" style="    height: 273px;">
+
+                      <div class="carousel-item active" *ngFor="let data of _data.technology.splice(0,1)" >
+        
+                        <img style="    height: 304px;" [src]="data['urlToImage']" alt="...">
+                        <div class="carousel-caption d-none d-md-block" style="    background: #14151782;border-radius: 10px;margin-bottom: 33px;">
+                          <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">{{data.source.name}}</span>
+                          </div>
+                          <h5  style="margin-top: 10px"><a  style="color: white"target="_blank" href="{{data.url}}">{{data.title}}</a></h5>
+        
+                        </div>
+                      </div>
+        
+                      <div class="carousel-item " *ngFor="let data of _data.technology.splice(1,4)" >
+        
+                          <img style="    height: 304px;" [src]="data['urlToImage']" alt="...">
+        
+                          <div class="carousel-caption d-none d-md-block" style="    background: #14151782;border-radius: 10px;margin-bottom: 33px;">
+                            <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">{{data.source.name}}</span>
+                            </div>
+                            <h5  style="margin-top: 10px"><a  style="color: white"target="_blank" href="{{data.url}}">{{data.title}}</a></h5>
+                          </div>
+                        </div>
+        
+        
+        
+        
+        
+                    </div>
+                  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+              </div>
+              <ng-container *ngFor="let articulo of _data.technology.splice(0,6)">
+                <div class="col-md-3">
+                  <div class="card" style="-webkit-box-shadow: 0px 2px 12px 3px  rgb(0, 0, 246);
+                  -moz-box-shadow: 0px 2px 12px 3px  rgb(0, 0, 246);
+                  box-shadow: 0px 2px 12px 3px  rgb(0, 0, 246);"> <img class="img-fluid" src="{{articulo.urlToImage}}" alt="">
+                    <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">{{articulo.source.name}}</span>
+                    </div>
+                    <div class="card-body">
+                      <div class="news-title">
+                        <h2 class=" title-small"><a target="_blank" href="{{articulo.url}}">{{articulo.title}}</a></h2>
+                      </div>
+                      <p class="card-text"><small class="text-time"><em>{{articulo.publishedAt}}</em></small></p>
+                    </div>
+                  </div>
+      
+                </div>
+              </ng-container>
+            </div>
+          </div>
+        </section>
+        <section class="section-01">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 col-md-12">
+                <h3 class="heading-large">More News of</h3>
+                <div class="">
+                  <div class="col-lg-6 card" *ngFor="let politics of _data.technology.splice(0,6)">
+                    <div class="card"> <img class="img-fluid" alt="">
+                      <div class="card-body">
+                        <div class="news-title"><a href="#">
+                            <h2 class=" title-small"><a target="_blank" href="{{politics.url}}">{{politics.title}}</a></h2>
+                          </a></div>
+                        <p class="card-text">{{politics.description}}</p>
+                        <p class="card-text"><small class="text-time"><em>{{politics.publishedAt}} <br>
+                              {{politics.source.name}}</em></small></p>
+      
+                      </div>
+                    </div>
+      
+                  </div>
+      
+                </div>
+              </div>
+              <aside class="col-lg-4 side-bar col-md-12">
+                <h4 class="heading-small">Entertainment</h4>
+      
+                <!-- Tab panes -->
+                
+                <div class="video-sec">
+                  
+                  <div class="video-block">
+                    
+                        <iframe src="https://wanted5games.com/games/html5/neon-gravity-en-s-iga-cloud/index.html?pub=10" name="cloudgames-com" width="441" height="390" frameborder="0" scrolling="no"></iframe>
+                   
+                </div>
+                <!-- <iframe src="https://wanted5games.com/games/html5/knife-smash-new-en-s-iga-cloud/index.html?pub=10" name="cloudgames-com" width="500" height="603" frameborder="0" scrolling="no"></iframe> -->
+      
+      
+      
+      
+      
+      
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+      
